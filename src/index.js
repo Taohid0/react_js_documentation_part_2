@@ -62,7 +62,7 @@ ReactDOM.render(
     document.getElementById("root")
 );
 }
-setInterval(tick,1000)
+//setInterval(tick,1000)
 
 function Welcome(props) {
     return <h1> hello {props.name}</h1>;
@@ -143,3 +143,43 @@ ReactDOM.render(
     />,
     document.getElementById('root')
 );
+function Clock2(props)
+{
+    return(
+        <div>
+            <h1>Hello, world again and again!</h1>
+            <h2>It is {props.date2.toLocaleString()}</h2>
+        </div>
+    );
+}
+function tick2() {
+    ReactDOM.render(
+        <Clock2 date2 = {new Date()}/>,
+        document.getElementById("root")
+    );
+}
+//setInterval(tick2,1000);
+
+class Clock3 extends React.Component{
+
+    constructor(props)
+    {
+        super(props);
+        this.state = {date:new Date()};
+    }
+    render()
+{
+    return(
+        <div>
+    <h1>Hello world third time!</h1>
+        <h2> It is {this.state.date.toLocaleString()}</h2>
+        </div>
+            );
+}
+}
+
+ReactDOM.render(
+    <Clock3/>,
+    document.getElementById("root")
+);
+
